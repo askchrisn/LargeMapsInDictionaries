@@ -12,13 +12,13 @@ namespace LargePngFramework
     internal class Program
     {
         // Configs
-        private const int SIZE = 14000;
-        private const int SIZE_CONVERSION = SIZE / 600;
-        private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeBitMaps\Maps";
+        private const int SIZE = 3;
+        private const int SIZE_IN_PIXELS = SIZE*600; // 1px = 50cm = 600 pixels = 1m SQFT
+        private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeMapsInDictionaries\Maps\";
         private const string WHITE = "ffffffff";
         private const string BLACK = "ff000000";
 
-        private static string IMAGE_NAME = IMAGE_PATH + SIZE_CONVERSION + "MSQFT_Generated.png";
+        private static string IMAGE_NAME = IMAGE_PATH + SIZE + "MSQFT_Generated.png";
         private static Dictionary<string, Coordinate> MapDictionary = new Dictionary<string, Coordinate>();
         private static Bitmap Map;
 
@@ -37,8 +37,8 @@ namespace LargePngFramework
         {
             if (File.Exists(IMAGE_NAME)) return;
 
-            var width = SIZE;
-            var height = SIZE;
+            var width = SIZE_IN_PIXELS;
+            var height = SIZE_IN_PIXELS;
             var bm = new Bitmap(width, height);
             var rand = new Random();
 
