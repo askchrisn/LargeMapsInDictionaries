@@ -12,7 +12,7 @@ namespace LargePngFramework
     internal class Program
     {
         // Configs
-        private const int SIZE = 4;
+        private const int SIZE = 25;
         private const int SIZE_IN_PIXELS = SIZE*600; // 1px = 50cm = 600 pixels = 1m SQFT
         private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeMapsInDictionaries\Maps\";
         
@@ -64,7 +64,7 @@ namespace LargePngFramework
             Console.WriteLine("Creating Lines...");
             for (var x = 0; x < width; x++)
             {
-                if (rand.NextDouble() < 0.2)
+                if (rand.NextDouble() < 0.1)
                 {
                     var stopY = rand.Next(height);
                     for (var y = 0; y <= stopY; y++)
