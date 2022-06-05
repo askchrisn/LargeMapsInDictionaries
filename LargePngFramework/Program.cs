@@ -12,7 +12,7 @@ namespace LargePngFramework
     internal class Program
     {
         // Configs
-        private const int SIZE = 11000;
+        private const int SIZE = 14000;
         private const int SIZE_CONVERSION = SIZE / 600;
         private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeBitMaps\Maps";
         private const string WHITE = "ffffffff";
@@ -115,8 +115,9 @@ namespace LargePngFramework
             var totalTime = endTime - startTime;
 
             Console.WriteLine("Created Dictionary...");
+            Console.WriteLine("DICTIONARY INFO");
             Console.WriteLine($"Pixels in Dictionary: {MapDictionary.Count}");
-            Console.WriteLine($"Total Time: {totalTime.TotalSeconds}");
+            Console.WriteLine($"Create Time: {totalTime.TotalSeconds} seconds");
         }
     }
 
