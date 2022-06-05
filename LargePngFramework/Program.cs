@@ -12,7 +12,7 @@ namespace LargePngFramework
     internal class Program
     {
         // Configs
-        private const int SIZE = 25;
+        private const int SIZE = 1;
         private const int SIZE_IN_PIXELS = SIZE*600; // 1px = 50cm = 600 pixels = 1m SQFT
         private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeMapsInDictionaries\Maps\";
         
