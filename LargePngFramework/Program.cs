@@ -11,13 +11,13 @@ namespace LargePngFramework
 {
     internal class Program
     {
-        private const int SIZE = 600;
+        private const int SIZE = 11000;
         private const int SIZE_CONVERSION = SIZE / 600;
-        private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeBitMaps\";
+        private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeBitMaps\Maps";
         private const string WHITE = "ffffffff";
         private const string BLACK = "ff000000";
-        
-        private static string IMAGE_NAME = IMAGE_PATH+SIZE_CONVERSION+"MSQFT_Generated.png";
+
+        private static string IMAGE_NAME = IMAGE_PATH + SIZE_CONVERSION + "MSQFT_Generated.png";
         private static Dictionary<string, Coordinate> MapDictionary = new Dictionary<string, Coordinate>();
         private static Bitmap Map;
 
@@ -98,7 +98,7 @@ namespace LargePngFramework
         {
             Console.WriteLine("Creating Dictionary...");
             var startTime = DateTime.Now;
-            
+
             for (var x = 0; x < Map.Width; x++)
             {
                 for (var y = 0; y < Map.Height; y++)
@@ -114,9 +114,9 @@ namespace LargePngFramework
             var totalTime = endTime - startTime;
 
             Console.WriteLine("Created Dictionary...");
-            Console.WriteLine($"Total Time: {totalTime.Seconds}");
+            Console.WriteLine($"Pixels in Dictionary: {MapDictionary.Count}");
+            Console.WriteLine($"Total Time: {totalTime.TotalSeconds}");
         }
-
     }
 
     public class Coordinate
