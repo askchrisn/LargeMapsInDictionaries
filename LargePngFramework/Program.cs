@@ -12,7 +12,7 @@ namespace LargePngFramework
     internal class Program
     {
         // Configs
-        private const int SIZE = 30;
+        private const int SIZE = 4;
         private const int SIZE_IN_PIXELS = SIZE*600; // 1px = 50cm = 600 pixels = 1m SQFT
         private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeMapsInDictionaries\Maps\";
         
@@ -43,8 +43,9 @@ namespace LargePngFramework
             var bm = new Bitmap(width, height);
             var rand = new Random();
 
-            Console.WriteLine("Creating map...");
+            Console.WriteLine("Starting map generation...");
 
+            Console.WriteLine("Creating Borders...");
             for (var y = 0; y < height; y++)
             {
                 for (var x = 0; x < width; x++)
@@ -59,8 +60,8 @@ namespace LargePngFramework
                     }
                 }
             }
-            Console.WriteLine("Borders created...");
 
+            Console.WriteLine("Creating Lines...");
             for (var x = 0; x < width; x++)
             {
                 if (rand.NextDouble() < 0.2)
@@ -82,18 +83,16 @@ namespace LargePngFramework
                     }
                 }
             }
-            Console.WriteLine("Lines created...");
 
+            Console.WriteLine("Saving...");
             bm.Save(IMAGE_NAME, ImageFormat.Png);
-            Console.WriteLine("Saved...");
         }
 
         private static void ImportMap()
         {
+            Console.WriteLine("Importing Map...");
             Image image = Image.FromFile(IMAGE_NAME);
             Map = new Bitmap(image);
-
-            Console.WriteLine("Imported Map...");
         }
 
         private static void InitDictionary()
