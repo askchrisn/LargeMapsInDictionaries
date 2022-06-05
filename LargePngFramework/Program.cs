@@ -11,6 +11,7 @@ namespace LargePngFramework
 {
     internal class Program
     {
+        // Configs
         private const int SIZE = 11000;
         private const int SIZE_CONVERSION = SIZE / 600;
         private const string IMAGE_PATH = @"C:\Users\chris\Documents\Projects\LargeBitMaps\Maps";
